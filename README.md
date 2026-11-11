@@ -62,7 +62,8 @@ drive paths (`F:\...`), so change the paths before using them.
 | 13 | `step10_ablation_summary.py` | neighbourhood ablation and q sensitivity under the final regime | §6.4, Table 6 |
 | 14 | `step11_nextgen.py`, `step11c_nextgen_subsample.py`, `step11b_nextgen_summary.py` | VeReMi NextGen pipeline and results | §6.8, App. A.8 |
 | 15 | `step12_xgb_tune.py` | XGBoost tuned on val-dev, then tested once | §5, §6.6 |
-| 16 | `step6_summary.py`, `make_figures.py` | text summary of all experiments; publication figures and tables | all |
+| 16 | `step13_reviewer_analysis.py` | unseen attacks: single-input AUC and open-set score on the representation; Sybil variants on MixAll | §6.5, §6.7, App. A.9 |
+| 17 | `step6_summary.py`, `make_figures.py` | text summary of all experiments; publication figures and tables | all |
 
 ### Minimal example (main result)
 
