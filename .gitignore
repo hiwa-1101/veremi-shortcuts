@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.parquet
+*.npy
+*.pt
+*.pkl
+*.zip
+*.rar
+results*/
+dl_cache*/
+nextgen*/
+mixall*/
+paper_figures*/
+!data/*.csv
+!data/*.json

@@ -1,0 +1,540 @@
+{
+  "A_genuine_overlap": [
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs DataReplay",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0073,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs DoSDisruptiveSybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0,
+      "genuine_messageID_overlap": 0.0025
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs RandomPos",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0072,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs RandomSpeed",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0072,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "DataReplay vs DoSDisruptiveSybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0,
+      "genuine_messageID_overlap": 0.0025
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "DataReplay vs RandomPos",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0071,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs DataReplay",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0068,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs DoSDisruptiveSybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0,
+      "genuine_messageID_overlap": 0.0003
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs RandomPos",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0071,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs RandomSpeed",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0073,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "DataReplay vs DoSDisruptiveSybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0,
+      "genuine_messageID_overlap": 0.0003
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "DataReplay vs RandomPos",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.007,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs ConstSpeed",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0071,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs ConstSpeedOffset",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0072,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DataReplay",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0066,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DataReplaySybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0065,
+      "genuine_messageID_overlap": 0.0047
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DelayedMessages",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0072,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DoS",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0001,
+      "genuine_messageID_overlap": 0.0042
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs ConstSpeed",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0068,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs ConstSpeedOffset",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0069,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DataReplay",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0074,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DataReplaySybil",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0075,
+      "genuine_messageID_overlap": 0.0025
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DelayedMessages",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0077,
+      "genuine_messageID_overlap": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DoS",
+      "genuine_sender_jaccard": 1.0,
+      "genuine_reception_overlap": 0.0,
+      "genuine_messageID_overlap": 0.0021
+    }
+  ],
+  "B_attacker_overlap": [
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs DataReplay",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs DoSDisruptiveSybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs RandomPos",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "ConstSpeed vs RandomSpeed",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "DataReplay vs DoSDisruptiveSybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 25200,
+      "pair": "DataReplay vs RandomPos",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs DataReplay",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs DoSDisruptiveSybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs RandomPos",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "ConstSpeed vs RandomSpeed",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "DataReplay vs DoSDisruptiveSybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "0709",
+      "hour": 28800,
+      "pair": "DataReplay vs RandomPos",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs ConstSpeed",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs ConstSpeedOffset",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DataReplay",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DataReplaySybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DelayedMessages",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 50400,
+      "pair": "ConstPosOffset vs DoS",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs ConstSpeed",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs ConstSpeedOffset",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DataReplay",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DataReplaySybil",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DelayedMessages",
+      "attacker_sender_jaccard": 1.0
+    },
+    {
+      "period": "1416",
+      "hour": 54000,
+      "pair": "ConstPosOffset vs DoS",
+      "attacker_sender_jaccard": 1.0
+    }
+  ],
+  "C_zero_noise_share": {
+    "ConstSpeed|0": 0.0,
+    "ConstSpeed|5": 0.0,
+    "DataReplay|0": 0.0,
+    "DataReplay|11": 0.0,
+    "DoSDisruptiveSybil|0": 0.0,
+    "DoSDisruptiveSybil|19": 0.0,
+    "RandomPos|0": 0.0,
+    "RandomPos|3": 0.0,
+    "RandomSpeed|0": 0.0,
+    "RandomSpeed|7": 0.0,
+    "ConstPosOffset|0": 0.0,
+    "ConstPosOffset|2": 0.0,
+    "ConstSpeedOffset|0": 0.0,
+    "ConstSpeedOffset|6": 0.0,
+    "DataReplaySybil|0": 0.0,
+    "DataReplaySybil|17": 0.0,
+    "DelayedMessages|0": 0.0,
+    "DelayedMessages|12": 0.5528,
+    "DoSRandom|0": 0.0,
+    "DoSRandom|14": 0.0,
+    "DoS|0": 0.0,
+    "DoS|13": 0.0,
+    "EventualStop|0": 0.0,
+    "EventualStop|9": 0.0
+  },
+  "D_pseudonyms": {
+    "ConstSpeed|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "ConstSpeed|5": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DataReplay|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DataReplay|11": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoSDisruptiveSybil|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoSDisruptiveSybil|19": {
+      "median": 100.0,
+      "max": 100
+    },
+    "RandomPos|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "RandomPos|3": {
+      "median": 1.0,
+      "max": 1
+    },
+    "RandomSpeed|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "RandomSpeed|7": {
+      "median": 1.0,
+      "max": 1
+    },
+    "ConstPosOffset|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "ConstPosOffset|2": {
+      "median": 1.0,
+      "max": 1
+    },
+    "ConstSpeedOffset|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "ConstSpeedOffset|6": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DataReplaySybil|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DataReplaySybil|17": {
+      "median": 42.5,
+      "max": 100
+    },
+    "DelayedMessages|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DelayedMessages|12": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoSRandom|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoSRandom|14": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoS|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "DoS|13": {
+      "median": 1.0,
+      "max": 1
+    },
+    "EventualStop|0": {
+      "median": 1.0,
+      "max": 1
+    },
+    "EventualStop|9": {
+      "median": 1.0,
+      "max": 1
+    }
+  },
+  "E_rate": {
+    "ConstSpeed|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "ConstSpeed|5": {
+      "median_msgs_per_s": 1.036
+    },
+    "DataReplay|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DataReplay|11": {
+      "median_msgs_per_s": 1.036
+    },
+    "DoSDisruptiveSybil|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DoSDisruptiveSybil|19": {
+      "median_msgs_per_s": 0.04
+    },
+    "RandomPos|0": {
+      "median_msgs_per_s": 1.048
+    },
+    "RandomPos|3": {
+      "median_msgs_per_s": 1.045
+    },
+    "RandomSpeed|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "RandomSpeed|7": {
+      "median_msgs_per_s": 1.036
+    },
+    "ConstPosOffset|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "ConstPosOffset|2": {
+      "median_msgs_per_s": 1.036
+    },
+    "ConstSpeedOffset|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "ConstSpeedOffset|6": {
+      "median_msgs_per_s": 1.036
+    },
+    "DataReplaySybil|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DataReplaySybil|17": {
+      "median_msgs_per_s": 2.0
+    },
+    "DelayedMessages|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DelayedMessages|12": {
+      "median_msgs_per_s": 1.036
+    },
+    "DoSRandom|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DoSRandom|14": {
+      "median_msgs_per_s": 2.182
+    },
+    "DoS|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "DoS|13": {
+      "median_msgs_per_s": 2.182
+    },
+    "EventualStop|0": {
+      "median_msgs_per_s": 1.04
+    },
+    "EventualStop|9": {
+      "median_msgs_per_s": 1.036
+    }
+  }
+}
