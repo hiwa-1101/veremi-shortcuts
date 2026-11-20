@@ -99,9 +99,10 @@ class GpuData:
 # Model
 # --------------------------------------------------------------------------
 class LinkNeighbourNet(nn.Module):
-    def __init__(self, f, n_classes, L, M, d=64, heads=4, layers=2, dropout=0.1, encoder="transformer"):
+    def __init__(self, f, n_classes, L, M, d=64, heads=4, layers=2, dropout=0.1, encoder="transformer",
+                 nb_agg="attention"):
         super().__init__()
-        self.L, self.M, self.encoder = L, M, encoder
+        self.L, self.M, self.encoder, self.nb_agg = L, M, encoder, nb_agg
         self.link_in = nn.Linear(f + 1, d)
         self.age_emb = nn.Parameter(torch.zeros(L, d))
         if encoder == "lstm":
@@ -115,9 +116,14 @@ class LinkNeighbourNet(nn.Module):
             self.link_enc = nn.TransformerEncoder(enc_layer, layers, enable_nested_tensor=False)
         if M > 0:
             self.nb_in = nn.Sequential(nn.Linear(f + 4, d), nn.GELU(), nn.Linear(d, d))
-            self.null_tok = nn.Parameter(torch.zeros(1, 1, d))   # always-valid "nobody" token
-            self.cross = nn.MultiheadAttention(d, heads, dropout=dropout, batch_first=True)
-            self.cross_norm = nn.LayerNorm(d)
+            if nb_agg == "sage":
+                # GraphSAGE-style receiver-local aggregation: the target is combined with the mean
+                # and the max of its embedded neighbours (no attention, permutation invariant).
+                self.sage = nn.Sequential(nn.Linear(3 * d, d), nn.GELU(), nn.LayerNorm(d))
+            else:
+                self.null_tok = nn.Parameter(torch.zeros(1, 1, d))   # always-valid "nobody" token
+                self.cross = nn.MultiheadAttention(d, heads, dropout=dropout, batch_first=True)
+                self.cross_norm = nn.LayerNorm(d)
         fuse_in = 2 * d if M > 0 else d
         self.head = nn.Sequential(nn.LayerNorm(fuse_in), nn.Linear(fuse_in, d), nn.GELU(),
                                   nn.Dropout(dropout), nn.Linear(d, n_classes))
@@ -145,6 +151,13 @@ class LinkNeighbourNet(nn.Module):
             return self.head(tgt)
         nb = self.nb_in(nb_tok)
         B = nb.shape[0]
+        if self.nb_agg == "sage":
+            okf = nb_ok.unsqueeze(-1).to(nb.dtype)
+            mean = (nb * okf).sum(1) / okf.sum(1).clamp(min=1)
+            mx = nb.masked_fill(~nb_ok.unsqueeze(-1), -1e4).max(1).values
+            mx = torch.where(nb_ok.any(1, keepdim=True), mx, torch.zeros_like(mx))
+            ctx = self.sage(torch.cat([tgt, mean, mx], -1))
+            return self.head(torch.cat([tgt, ctx], -1))
         nb = torch.cat([self.null_tok.expand(B, 1, -1), nb], 1)
         mask = torch.cat([torch.zeros(B, 1, dtype=torch.bool, device=nb.device), ~nb_ok], 1)
         att, _ = self.cross(tgt.unsqueeze(1), nb, nb, key_padding_mask=mask)
@@ -237,6 +250,8 @@ def main():
     ap.add_argument("--tag", default="")
     ap.add_argument("--name", default="tmodel", help="model name in the output file (e.g. bilstm)")
     ap.add_argument("--encoder", choices=["transformer", "lstm"], default="transformer")
+    ap.add_argument("--nb-agg", choices=["attention", "sage"], default="attention",
+                    help="neighbourhood aggregation: cross-attention (proposed) or GraphSAGE mean+max")
     ap.add_argument("--exclude-attack", type=int, default=-1,
                     help="leave-one-attack-out: attack label removed from training and early stopping")
     ap.add_argument("--train-period", default="", help="train only on this period, e.g. 0709")
@@ -297,7 +312,7 @@ def main():
         weight = torch.tensor(w / w.mean(), dtype=torch.float32, device=device)
 
         model = LinkNeighbourNet(data.f, C, args.history, args.neighbors, d=args.d,
-                                 layers=args.layers, encoder=args.encoder).to(device)
+                                 layers=args.layers, encoder=args.encoder, nb_agg=args.nb_agg).to(device)
         opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
         steps = args.epochs * math.ceil(len(rows_tr) / args.batch)
         sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=args.lr, total_steps=steps, pct_start=0.1)

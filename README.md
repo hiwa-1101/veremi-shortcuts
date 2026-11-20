@@ -63,7 +63,8 @@ drive paths (`F:\...`), so change the paths before using them.
 | 14 | `step11_nextgen.py`, `step11c_nextgen_subsample.py`, `step11b_nextgen_summary.py` | VeReMi NextGen pipeline and results | §6.8, App. A.8 |
 | 15 | `step12_xgb_tune.py` | XGBoost tuned on val-dev, then tested once | §5, §6.6 |
 | 16 | `step13_reviewer_analysis.py` | unseen attacks: single-input AUC and open-set score on the representation; Sybil variants on MixAll | §6.5, §6.7, App. A.9 |
-| 17 | `step6_summary.py`, `make_figures.py` | text summary of all experiments; publication figures and tables | all |
+| 17 | `step5b_train_model.py --encoder lstm --nb-agg sage`, `step9_train_mixed.py`, `step15_sage_summary.py` | second context architecture (Bi-LSTM + GraphSAGE neighbourhood) under the three training regimes (`windows/run_sage.bat`) | §6.5, Table 7 |
+| 18 | `step6_summary.py`, `make_figures.py` | text summary of all experiments; publication figures and tables | all |
 
 ### Minimal example (main result)
 

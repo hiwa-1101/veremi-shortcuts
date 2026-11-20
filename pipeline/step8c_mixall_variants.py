@@ -71,7 +71,7 @@ def binary_extra(y, pg, fpr_target):
 def load_model(info, path_json, path_w, device):
     cfg = json.load(open(path_json))["config"]
     m = LinkNeighbourNet(len(info["features"]), len(info["classes"]), cfg["history"], cfg["neighbors"],
-                         d=cfg["d"], layers=cfg["layers"], encoder=cfg.get("encoder", "transformer"))
+                         d=cfg["d"], layers=cfg["layers"], encoder=cfg.get("encoder", "transformer"), nb_agg=cfg.get("nb_agg", "attention"))
     m.load_state_dict(torch.load(path_w, map_location="cpu"))
     return m.to(device).eval(), cfg
 
@@ -86,7 +86,17 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--mixed", default="", help="results folder of step9 (mixed-scene training)")
     ap.add_argument("--xgb-fpr", type=float, default=0.0386)
+    ap.add_argument("--variants", default="",
+                    help='optional list "name:folder:seeds;..." (folder = final/extra/mixed or a path), '
+                         'e.g. "lsage:F:/r:0,1,2;lsage_mix:F:/r:0,1,2"')
     args = ap.parse_args()
+    global VARIANTS
+    if args.variants:
+        VARIANTS = []
+        for item in args.variants.split(";"):
+            name, rest = item.split(":", 1)
+            folder, seeds = rest.rsplit(":", 1)
+            VARIANTS.append((name, folder, [int(x) for x in seeds.split(",")]))
     info = json.load(open(os.path.join(args.cache, "info.json")))
     classes = info["classes"]
     g = classes.index(0)
@@ -99,8 +109,8 @@ def main():
     models = {}
     for name, d, seeds in VARIANTS:
         for s in seeds:
-            j = os.path.join(dirs[d], f"{name}_multi_vehicle_seed{s}.json")
-            w = os.path.join(dirs[d], f"{name}_multi_vehicle_seed{s}_weights.pt")
+            j = os.path.join(dirs.get(d, d), f"{name}_multi_vehicle_seed{s}.json")
+            w = os.path.join(dirs.get(d, d), f"{name}_multi_vehicle_seed{s}_weights.pt")
             if os.path.exists(j) and os.path.exists(w):
                 models[(name, s)] = load_model(info, j, w, device)
             elif not name.startswith("tmix") or args.mixed:
@@ -158,7 +168,7 @@ def main():
             pr = np.concatenate(preds[k]).astype(np.int64); pg = np.concatenate(pgs[k])
             mix.append(metrics(y[keep], pr[keep], classes))
             bx.append(binary_extra(y[keep], pg[keep], args.xgb_fpr))
-            pm = os.path.join(dirs[d], f"{name}_multi_vehicle_seed{k[1]}_pred.npy")
+            pm = os.path.join(dirs.get(d, d), f"{name}_multi_vehicle_seed{k[1]}_pred.npy")
             if os.path.exists(pm):
                 pmain = np.load(pm).astype(np.int64)
                 if len(pmain) == len(y_main):
